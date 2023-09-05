@@ -1,0 +1,10 @@
+.footer{
+    display: flex;
+    bottom: 0px;
+    align-items: center;
+    width: 100vw;
+}
+
+.home {
+    position: relative;
+}

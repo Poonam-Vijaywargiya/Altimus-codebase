@@ -1,0 +1,8 @@
+.feature-container{
+    display: flex;
+    flex-direction: row;
+    top: 10vh;
+    position: absolute;
+    width: 100%;
+    justify-content: space-around;
+}

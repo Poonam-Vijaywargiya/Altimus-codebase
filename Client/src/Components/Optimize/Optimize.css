@@ -1,0 +1,112 @@
+.optimize-container {
+    display: flex;
+    flex-direction: column;
+    top: 10vh;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    flex-wrap: wrap;
+}
+
+.renewable-icon {
+    margin: 50px;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4rem;
+    }
+
+.icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: center;
+}
+.round-icon {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.icon-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.opt-icon {
+    height:100px;
+    width: 100px
+}
+
+.column-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    box-shadow:0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.clm-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+.icons-style {
+    padding: 20px;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 20px;
+    margin: 2%;
+    border: 1px solid gray;
+}
+
+.opt-icons {
+    width: 80px;
+    height: 80px;
+}
+
+.opt-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%
+}
+
+.top-icons {
+    width: 30%;
+    height: 30%;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .opt-container{
+        flex-direction: column;
+    }
+    .icons-style {
+        padding: 20px;
+        display: flex;
+        justify-content:flex-start;
+        align-items:flex-start;
+        border-radius: 20px;
+        margin: 2%;
+        border: 1px solid gray;
+    }
+  }

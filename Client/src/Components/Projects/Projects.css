@@ -1,0 +1,30 @@
+.project-card{
+    min-width: 20vw;
+    height: auto;
+}
+
+.project-container{
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.btn-class{
+    margin: 20px;
+    display: flex;
+    justify-content: end;
+}
+
+.create-new-project-container {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    height: 90vh
+}
+
+
+.textfield{
+    margin-bottom: "100px"
+}
