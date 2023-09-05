@@ -44,7 +44,7 @@ function Header(props) {
         navItems = ['Home', 'Projects', 'About', 'Contact', 'Login'];
     } else {
       setShowLogin(false);
-        if(localStorage.getItem('email') == 'poonam.v@gmail.com') {
+        if(localStorage.getItem('email') == 'altimus.grg@gmail.com') {
         navItems = ['Home', 'Projects', 'Files', 'About', 'Contact', 'Logout'];
       } else{
         navItems = ['Home', 'Projects', 'About', 'Contact', 'Logout'];
