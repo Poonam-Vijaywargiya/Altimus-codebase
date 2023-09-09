@@ -13,6 +13,7 @@ const File = require('./models/File.model');
 const nodemailer = require('nodemailer');
 app.use(cors())
 app.use(express.json())
+app.use(express.static(path.join(__dirname, '../Client/dist/')))
 mongoose.connect('mongodb+srv://altimusgrg:oxRavth6B7b4RcfA@cluster0.ohvhc70.mongodb.net/upwork-project')
     .then(() => console.log('MongoDB connected...'))
     .catch(err => console.log(err));
@@ -32,12 +33,10 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', function(req, res){
-    console.log('inside func',  path.join(__dirname, "../Client/dist/index.html"))
-    res.sendFile(
+   res.sendFile(
         path.join(__dirname, "../Client/dist/index.html"), 
         function(err) {
             if(err) {
-                console.log('err', err, path)
                 res.status(500).send(err)
             }
         }
