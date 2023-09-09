@@ -1,8 +1,32 @@
-.feature-container{
+.contact-container{
     display: flex;
     flex-direction: row;
-    top: 10vh;
     position: absolute;
     width: 100%;
-    justify-content: space-around;
+    height: 100%;
+    justify-content: center;
+    background: url(../../assets/contactimg.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-icon {
+    margin-right: 10px;
+  }
+  
+  .contact-card {
+    /* margin: 5%; */
+    padding: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    height: 30%;
+    margin-top: 10vh;
+    background-color: white;
+    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.5);
 }

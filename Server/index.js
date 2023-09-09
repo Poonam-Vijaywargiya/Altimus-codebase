@@ -30,7 +30,16 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-
+app.get('/', function(req, res){
+    res.sendFile(
+        path.join(__dirname, "../Client/build/index.html"), 
+        function(err) {
+            if(err) {
+                res.status(500).send(err)
+            }
+        }
+    )
+})
 
 app.post('/api/signup', async (req,res) =>{
     try{
@@ -213,9 +222,11 @@ app.get('/api/downloadOutput/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-  
-app.listen(1337, ()=>{
-    console.log('server started')
+
+const PORT = process.env.PORT || 1337;
+
+app.listen(PORT, ()=>{
+    console.log('server started at port '+ PORT)
 })
 
 

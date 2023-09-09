@@ -35,7 +35,6 @@ const WindPlant = () => {
             label={v}
             name={v}
             value={userData.formData[2].data[v]}
-            autoFocus
             onChange={(e) => updateUserData(e,v)}
           />
             
@@ -48,7 +47,6 @@ const WindPlant = () => {
             label="Field Label"
             name="fieldLabel"
             value={fieldLabel}
-            autoFocus
             onChange={(e) => setFieldLabel(e.target.value)}
             /> 
             <TextField
@@ -58,7 +56,6 @@ const WindPlant = () => {
             label="Field Value"
             name="fieldValue"
             value={fieldValue}
-            autoFocus
             onChange={(e) => setFieldValue(e.target.value)}
             />
             <Button variant="contained"

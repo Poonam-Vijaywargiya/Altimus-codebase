@@ -20,7 +20,6 @@ const GeneralComponent = () => {
             label={v}
             name={v}
             value={userData.formData[0].data[v]}
-            autoFocus
             onChange={(e) => updateUserData(e,v)}
           />
         ))}

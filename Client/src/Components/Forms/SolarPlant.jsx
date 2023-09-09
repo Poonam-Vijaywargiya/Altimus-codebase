@@ -34,7 +34,6 @@ const SolarPlant = () => {
             label={v}
             name={v}
             value={userData.formData[1].data[v]}
-            autoFocus
             onChange={(e) => updateUserData(e,v)}
           />
             
@@ -47,7 +46,6 @@ const SolarPlant = () => {
             label="Field Label"
             name="fieldLabel"
             value={fieldLabel}
-            autoFocus
             onChange={(e) => setFieldLabel(e.target.value)}
             /> 
             <TextField
@@ -57,7 +55,6 @@ const SolarPlant = () => {
             label="Field Value"
             name="fieldValue"
             value={fieldValue}
-            autoFocus
             onChange={(e) => setFieldValue(e.target.value)}
             />
             <Button variant="contained"

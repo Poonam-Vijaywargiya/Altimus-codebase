@@ -20,7 +20,6 @@ const ContractualRequirement = () => {
             label={v}
             name={v}
             value={userData.formData[7].data[v]}
-            autoFocus
             onChange={(e) => updateUserData(e,v)}
           />
         ))}

@@ -3,15 +3,13 @@ import {Cards, Header} from '../../Components';
 import underTheHoodData from './UnderTheHoodData.js';
 import './UnderTheHood.css';
 import Typography from '@mui/material/Typography';
-import energyVideo from '../../assets/Energy-Video.mp4';
+import underthehood from '../../assets/underthehood.jpg';
 const UnderTheHood = () => {
   return (
     <>
         <Header/>
         <div className='hood-container'>
-        <video className='video-under-hood-tag' autoPlay loop muted>
-          <source src={energyVideo} type='video/mp4' />
-        </video>
+         <img src={underthehood} className='video-under-hood-tag' />
            <div className='hood-cards-container'> {underTheHoodData.map(v => (
                 <div className='hood-card'>
                     <Typography gutterBottom variant="h5" component="div" style={{padding: '20px', display: 'flex', justifyContent:'center'}}>

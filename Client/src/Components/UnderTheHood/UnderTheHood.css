@@ -1,8 +1,8 @@
 
 .hood-card{
-    margin-bottom: 20px;
-   border: 1px solid rgb(204, 193, 193);
-   border-radius: 10px;
+    /* margin-bottom: 20px; */
+    border: 1px solid rgb(204, 193, 193);
+    border-radius: 10px;
     margin: 1%;
     flex: 1;
 }
@@ -10,11 +10,11 @@
 .hood-container{
     display: flex;
     flex-direction: column;
-    top: 10vh;
+    top: 5vh;
     position: absolute;
     width: 100%;
     justify-content: space-around;
-    margin: 10px;
+    margin: 1% 0%;
 }
 
 .hood-cards-container{
@@ -24,12 +24,12 @@
 }
 
 .video-under-hood-tag{
-    width: 98%;
-    height: 30vh;
+    height: 50vh;
     top: 0;
-    left: 2%;
     align-items: stretch;
     bottom: 0;
-    right: 2%;
     object-fit: fill;
+    margin: 1%;
+    border: 5px solid white;
+    border-radius: 15px;
 }

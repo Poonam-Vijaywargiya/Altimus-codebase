@@ -18,7 +18,7 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
   const [skipped, setSkipped] = React.useState(new Set());
   const [steps, setSteps]  = React.useState(['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications', 'Financial Parameters', 'Contractual Requirement'])
   useEffect(() =>{
-    let stepsCopy = []
+    let stepsCopy = [];
     if(selectedPlantList.indexOf('wind') >-1 && selectedPlantList.indexOf('solar') >-1 && selectedPlantList.indexOf('battery') == -1) {
       stepsCopy = ['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications','Financial Parameters', 'Contractual Requirement', 'Solar Plant', 'Wind Plant'];
     }
@@ -148,14 +148,14 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
       {activeStep === steps.length ? (
         <React.Fragment>
           <Typography sx={{ mt: 2, mb: 1 }}>
-            <PreviewProject/>
+         {activeStep != 0 && <PreviewProject/> }
           </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
+         { activeStep != 0 && <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
             <Button onClick={handleBack}>Back</Button>
             <Button onClick={handleSubmit}>Submit</Button>
             <Button onClick={handleReset}>Reset</Button>
-          </Box>
+          </Box> }
         </React.Fragment>
       ) : (
         <React.Fragment>

@@ -77,7 +77,6 @@ const BatterySpec = () => {
         label="Chemisrty User Input"
         name="chemisrtyUserInput"
         value={chemisrtyUserInput}
-        autoFocus
         onChange={(e) => updateUserInput(e)} /> 
         <Button variant="contained"
         sx={{ mt: 2, mb: 2 }} onClick={addChemistryUserInput}>Add Chemistry Input</Button> 
@@ -101,7 +100,6 @@ const BatterySpec = () => {
             id="forcastfile"
             inputProps={{accept:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"}}
             name="forcastExcelFile"
-            autoFocus
             onChange={(e) => updateForcastUserInput(e)} />
         <Button variant="contained"
         sx={{ mt: 2, mb: 2 }} onClick={addForcastUserInput}>Add Forcasted Input</Button> 
@@ -114,7 +112,6 @@ const BatterySpec = () => {
          label={v}
          name={v}
          value={userData.formData[5].data[v]}
-         autoFocus
          onChange={(e) => updateUserData(e,v)}
        />
         }  </> 

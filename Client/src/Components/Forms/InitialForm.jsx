@@ -16,7 +16,6 @@ const InitialForm = () => {
             id="projectName"
             label="Project Name"
             name="projectName"
-            autoFocus
             value={userData.projectName}
             onChange={(e) => setUserData((prev) => ({...userData, 'projectName': e.target.value}))}
         />
@@ -44,7 +43,7 @@ const InitialForm = () => {
             id="file"
             inputProps={{accept:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"}}
             name="excelFile"
-            autoFocus
+
             onChange={(e) => handleFileUpload(e)}
         />
         {userData.file && <p>Uploaded File Name: {userData.file}</p>}
