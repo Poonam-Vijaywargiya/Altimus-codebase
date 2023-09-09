@@ -32,16 +32,24 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-app.get('/', function(req, res){
-   res.sendFile(
-        path.join(__dirname, "../Client/dist/index.html"), 
-        function(err) {
-            if(err) {
-                res.status(500).send(err)
-            }
-        }
-    )
-})
+// app.get('/', function(req, res){
+//    res.sendFile(
+//         path.join(__dirname, "/Client/dist/index.html"), 
+//         function(err) {
+//             if(err) {
+//                 res.status(500).send(err)
+//             }
+//         }
+//     )
+// })
+app.get('*', function(req, res) {
+    res.sendFile('index.html', { root: __dirname }, function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    });
+  });
+
 
 app.post('/api/signup', async (req,res) =>{
     try{
