@@ -3,7 +3,7 @@ import './Charts.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import {FreeCashFlow,MonthlyGeneration } from '../../Components/index';
+import {FreeCashFlow,MonthlyGeneration } from '../index';
 import ChargingStationOutlinedIcon from '@mui/icons-material/ChargingStationOutlined';
 import SolarPowerOutlinedIcon from '@mui/icons-material/SolarPowerOutlined';
 import WindPowerOutlinedIcon from '@mui/icons-material/WindPowerOutlined';

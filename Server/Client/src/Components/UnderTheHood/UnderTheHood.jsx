@@ -1,5 +1,5 @@
 import React from 'react'
-import {Cards, Header} from '../../Components';
+import {Cards, Header} from '..';
 import underTheHoodData from './UnderTheHoodData.js';
 import './UnderTheHood.css';
 import Typography from '@mui/material/Typography';

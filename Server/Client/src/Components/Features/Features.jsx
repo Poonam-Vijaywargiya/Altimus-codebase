@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header,Charts,Cards } from '../../Components';
+import {Header,Charts,Cards } from '..';
 import './Features.css';
 import featuresData from './FeaturesData.js';
 import Typography from '@mui/material/Typography';

@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
-import {Header} from '../../Components/index';
+import {Header} from '../index';
 import axios from 'axios';
 const AllFiles = () => {
     const [rows, setRows]  = useState([]);

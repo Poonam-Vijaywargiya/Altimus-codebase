@@ -1,5 +1,5 @@
 import React from 'react'
-import {Header } from '../../Components/index';
+import {Header } from '../index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import ContactIcon from '@mui/icons-material/ContactMail';

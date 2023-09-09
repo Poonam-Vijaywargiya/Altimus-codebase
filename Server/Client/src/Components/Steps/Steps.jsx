@@ -9,7 +9,7 @@ import UserContext from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {BatterySpec, GeneralComponent, PlantGridTrans, WindPlant, SolarPlant, TransInfra,
-  InitialForm, PreviewProject, ContractualRequirement, FinancialParams} from '../../Components';
+  InitialForm, PreviewProject, ContractualRequirement, FinancialParams} from '..';
 import { Preview } from '@mui/icons-material';
 const Steps = () => {
   const navigate = useNavigate();

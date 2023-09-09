@@ -1,5 +1,5 @@
 import React, {useState, useEffect, useContext} from 'react'
-import {Steps} from '../../Components/index';
+import {Steps} from '../index';
 import graphics from '../../assets/background.svg'
 import Button from '@mui/material/Button';
 import UserContext from '../../Context/UserContext';

@@ -1,7 +1,7 @@
 import React from 'react'
 import energyVideo from '../../assets/Energy-Video.mp4';
 import './Home.css'
-import {Header} from '../../Components/index'
+import {Header} from '../index'
 const Home = () => {
   return (
     <>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Header } from '../../Components';
+import {Header } from '..';
 import './Optimize.css';
 import CountUp from 'react-countup';
 import OCapex from '../../assets/OCapex.svg';
