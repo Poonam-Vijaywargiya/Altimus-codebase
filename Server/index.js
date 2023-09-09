@@ -33,8 +33,9 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('*', function(req, res){
+    console.log(path.join(__dirname, "../Client/dist/index.html"))
    res.sendFile(
-        path.join(__dirname, "../../Client/dist/index.html"), 
+        path.join(__dirname, "../Client/dist/index.html"), 
         function(err) {
             if(err) {
                 res.status(500).send(err)
