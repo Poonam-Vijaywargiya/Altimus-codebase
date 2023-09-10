@@ -2,8 +2,6 @@ import React from 'react'
 import {Header } from '../index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import ContactIcon from '@mui/icons-material/ContactMail';
-import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import './Contact.css';
 const Contact = () => {
