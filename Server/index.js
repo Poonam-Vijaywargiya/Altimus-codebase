@@ -32,9 +32,9 @@ const transporter = nodemailer.createTransport({
   },
 });
 app.get('*', function(req, res) {
+    console.log(__dirname , 'dirname')
     res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
       if (err) {
-    
         res.status(500).send(err);
       }
     });
