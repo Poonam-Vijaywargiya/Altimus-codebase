@@ -9,6 +9,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const multer = require('multer');
 const XLSX = require('xlsx');
+const fs = require('fs');
 const File = require('./models/File.model');
 const nodemailer = require('nodemailer');
 app.use(cors())
@@ -32,7 +33,18 @@ const transporter = nodemailer.createTransport({
   },
 });
 app.get('*', function(req, res) {
-    console.log(__dirname , 'dirname')
+    // console.log(__dirname , ,'dirname');
+    fs.readdir(__dirname, function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file); 
+        });
+    });
     res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
       if (err) {
         res.status(500).send(err);
