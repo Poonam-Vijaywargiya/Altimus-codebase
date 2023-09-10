@@ -40,7 +40,7 @@ function Header(props) {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if(!token) {
-        navigate("/home");
+        // navigate("/home");
         navItems = ['Home', 'Projects', 'About', 'Contact', 'Login'];
     } else {
       setShowLogin(false);

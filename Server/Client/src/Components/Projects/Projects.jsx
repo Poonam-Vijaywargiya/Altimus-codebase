@@ -11,6 +11,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import graphics from '../../assets/background.svg';
 import axios from 'axios';
+const navigate = useNavigate();
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -99,7 +100,11 @@ const Projects = () => {
     setProjects(resData.data)
   }
   useEffect(() =>{
-    getProjects();
+    if(localStorage.get('email')) {
+      getProjects();
+    } else {
+      navigate('/home');
+    }
   }, [])
 
   const createNewProject =() =>{
