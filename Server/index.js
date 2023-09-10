@@ -34,7 +34,7 @@ const transporter = nodemailer.createTransport({
 });
 app.get('*', function(req, res) {
     // console.log(__dirname , ,'dirname');
-    fs.readdir(__dirname, function (err, files) {
+    fs.readdir(__dirname+'./Client', function (err, files) {
         //handling error
         if (err) {
             return console.log('Unable to scan directory: ' + err);
