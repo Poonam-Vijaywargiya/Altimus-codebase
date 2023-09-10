@@ -21,7 +21,7 @@ const Contact = () => {
             <EmailIcon className="contact-icon" color="primary" />
             <Typography variant="body1">
               <strong>Email:</strong> 
-              <a href="mailto:altimus.grg@gmail.com&subject=Contact Enquiry" style={{textDecoration: 'none'}}> altimus.grg@gmail.com</a>
+              <a href="mailto:admin@altimus.energy&subject=Contact Enquiry" style={{textDecoration: 'none'}}> admin@altimus.energy</a>
             </Typography>
           </div>
         </Grid>

@@ -25,13 +25,23 @@ const upload = multer({ storage: storage });
 
 
 // Create a transporter object using the default SMTP transport
+// const transporter = nodemailer.createTransport({
+//   service: 'Gmail',
+//   auth: {
+//     user: 'altimus.grg@gmail.com', // Your Gmail email address
+//     pass: 'aaghaocthavjejxd',        // Your Gmail password or app-specific password
+//   },
+// });
+
 const transporter = nodemailer.createTransport({
-  service: 'Gmail',
-  auth: {
-    user: 'altimus.grg@gmail.com', // Your Gmail email address
-    pass: 'aaghaocthavjejxd',        // Your Gmail password or app-specific password
-  },
-});
+    host: 'smtpout.secureserver.net', // GoDaddy SMTP server
+    port: 465, // Port for secure SMTP
+    secure: true, // Use SSL/TLS
+    auth: {
+      user: 'admin@altimus.energy', // Your GoDaddy email address
+      pass: 'altimus123', // Your GoDaddy email password
+    },
+  });
 app.get('*', function(req, res) {
     // console.log(__dirname , ,'dirname');
     fs.readdir(__dirname+'/Client', function (err, files) {
@@ -118,8 +128,10 @@ app.post('/api/addnewproject', async (req,res) =>{
         res.json({status: 'ok', projectid: project._id, name: project.data.projectName});
         // Email data
         const mailOptions = {
-            from: 'altimus.grg@gmail.com',
-            to: 'altimus.grg@gmail.com',
+            // from: 'altimus.grg@gmail.com',
+            // to: 'altimus.grg@gmail.com',
+            from: 'admin@altimus.energy',
+            to: 'admin@altimus.energy',
             subject: 'New Project Created in Altimus',
             text: `${req.body.email} has created a new project, please check the Files section to see that information.`,
         };
@@ -217,7 +229,8 @@ app.post('/api/uploadpdf', upload.single('pdfFile'), async (req, res) => {
         await File.updateOne({_id: req.body.id}, {uploadedfile:file.originalname, pdfdata: file.buffer});
         res.status(201).send('File uploaded successfully.');
         const mailOptions = {
-            from: 'altimus.grg@gmail.com',
+            // from: 'altimus.grg@gmail.com',
+            from:'admin@altimus.energy',
             to: userEmail,
             subject: 'Altimus output is generated',
             text: `Please check the Altimus tool to get the generated output`,

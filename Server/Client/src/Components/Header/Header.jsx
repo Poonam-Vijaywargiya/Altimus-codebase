@@ -41,7 +41,7 @@ function Header(props) {
     // const token = localStorage.getItem('token');
     if(localStorage.getItem('email')) {
       setShowLogin(false);
-        if(localStorage.getItem('email') == 'altimus.grg@gmail.com') {
+        if(localStorage.getItem('email') == 'admin@altimus.energy') {
         navItems = ['Home', 'Projects', 'Files', 'About', 'Contact', 'Logout'];
       } else {
         navItems = ['Home', 'Projects', 'About', 'Contact', 'Logout'];
