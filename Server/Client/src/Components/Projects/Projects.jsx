@@ -99,11 +99,12 @@ const Projects = () => {
     setProjects(resData.data)
   }
   useEffect(() =>{
-    if(localStorage.get('email')) {
-      getProjects();
-    } else {
-      navigate('/home');
-    }
+    // if(localStorage.get('email')) {
+    //   getProjects();
+    // } else {
+    //   // navigate('/home');
+    // }
+    getProjects();
   }, [])
 
   const createNewProject =() =>{
