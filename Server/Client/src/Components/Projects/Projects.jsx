@@ -1,4 +1,4 @@
-import React , {useState, useEffect, useNavigate} from 'react'
+import React , {useState, useEffect} from 'react'
 import {Header,Charts, Steps, ProjectCard, CreateNewProject} from '../index';
 import "./Projects.css";
 import TextField from '@mui/material/TextField';
@@ -6,10 +6,9 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
-import graphics from '../../assets/background.svg';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const navigate = useNavigate();
 const Transition = React.forwardRef(function Transition(props, ref) {
