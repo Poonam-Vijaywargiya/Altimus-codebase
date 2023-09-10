@@ -22,7 +22,7 @@ import './Header.css';
 import UserContext from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 const drawerWidth = 240;
-let navItems = ['Home', 'About', 'Contact', 'Projects', 'Login'];
+let navItems = ['Home', 'Projects', 'About', 'Contact', 'Login'];
 const homeNavs = ['Why Optimize', 'Features', 'Under the Hood'];
 
 function Header(props) {
@@ -39,16 +39,13 @@ function Header(props) {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    if(!token) {
-        // navigate("/home");
-        navItems = ['Home', 'Projects', 'About', 'Contact', 'Login'];
-    } else {
+    if(token) {
       setShowLogin(false);
         if(localStorage.getItem('email') == 'altimus.grg@gmail.com') {
         navItems = ['Home', 'Projects', 'Files', 'About', 'Contact', 'Logout'];
-      } else{
+      } else {
         navItems = ['Home', 'Projects', 'About', 'Contact', 'Logout'];
-      } 
+      }
     }
   },[])
   const showNavigation = (e) =>{
