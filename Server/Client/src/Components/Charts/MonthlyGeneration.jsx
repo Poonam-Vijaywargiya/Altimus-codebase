@@ -9,7 +9,7 @@ import './Charts.css';
     <Typography align="center" gutterBottom variant="h6" component="div" gutterTop>
        Monthly Generation(MWH)
       </Typography>
-      <ResponsiveContainer width='90%'  height={400} >
+      <ResponsiveContainer width='90%'  height={250} >
          <BarChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="months" />

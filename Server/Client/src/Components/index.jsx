@@ -1,6 +1,8 @@
 export {default as Header } from './Header/Header';
 export {default as Footer} from './Footer/Footer';
 export {default as FreeCashFlow } from './Charts/FreeCashFlow';
+export {default as Usability } from './Charts/Usability';
+export {default as BESSPrice } from './Charts/BESSPrice';
 export {default as MonthlyGeneration } from './Charts/MonthlyGeneration';
 export {default as Features } from './Features/Features';
 export {default as Projects } from './Projects/Projects';

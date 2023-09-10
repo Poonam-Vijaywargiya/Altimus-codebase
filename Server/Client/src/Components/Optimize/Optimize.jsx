@@ -31,21 +31,21 @@ const Optimize = () => {
         <div className='icons-style'>
           <img src={Generation} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1% increase in generation creates value  $<CountUp end={2000000} duration={8} useEasing={true} start={1999900} />
+          1% increase in generation creates value  $<CountUp end={2000000} duration={8} useEasing={true} start={0} />
           </div>
         </div>
 
         <div className='icons-style'>
           <img src={OCapex} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1% lower capex creates value $<CountUp end={1500000} duration={8} useEasing={true} start={1499900}/> 
+          1% lower capex creates value $<CountUp end={1500000} duration={8} useEasing={true} start={0}/> 
           </div>
         </div>
   
         <div className='icons-style'>
           <img src={Battery} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1-year extended battery life creates value $<CountUp end={500000} duration={8} useEasing={true} start={499900} />
+          1-year extended battery life creates value $<CountUp end={500000} duration={8} useEasing={true} start={0} />
           </div>
         </div>
         </div>

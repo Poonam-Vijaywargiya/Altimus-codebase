@@ -9,7 +9,7 @@ import './Charts.css';
       <Typography align="center" gutterBottom variant="h6" component="div" gutterTop>
        Free Cash Flow(in US$ million)
       </Typography>
-      <ResponsiveContainer width='90%' height={400} >
+      <ResponsiveContainer width='90%' height={250} >
          <BarChart data={flowData} >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="year" />

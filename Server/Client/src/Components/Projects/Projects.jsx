@@ -100,10 +100,10 @@ const Projects = () => {
     setProjects(resData.data)
   }
   useEffect(() =>{
-    if(localStorage.getItem('token')) {
+    if(localStorage.getItem('email')) {
       getProjects();
     } else {
-      navigate('/home');
+      navigate('/login');
     }
     // getProjects();
   }, [])
@@ -135,21 +135,39 @@ const Projects = () => {
     <div>
     <Header/>
    <div style={{top: '10vh', position: 'relative'}} >
-   { !showNewProject && <><div className='btn-class'><Button
-              onClick={createNewProject}
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Create New Project
-            </Button></div>
-            <div className='project-container'>
-   { projects.length> 0 && projects.map(v =>(
-      <div className='project-card'> 
-        <ProjectCard title={v.data.projectName} content={v.data.projectShortDesc} 
-       id={v._id} projectPreview={showProjectPreview} downloadOutput={downloadOutput}
-      />
+   { !showNewProject && <><div className='btn-class'>
+      <div style={{border: '1px solid lightgray', borderRadius: '10px', padding: '20px'}} >
+        <h2>How does the model work?</h2>									
+        <div>The model aims to provide the project developer with optimized capacity of Solar, Wind and BESS sizing for the given input data</div>									
+        <div > <h3>Output: </h3>                        
+          <ul style={{marginLeft: '20px'}}>
+            <li> Solar, Wind and BESS initial installed capacity. Optimized Battery augmentation approach (capacity and year)</li>
+            <li> Suggested BESS co-location option ( with Wind or Solar)</li>								
+            <li>Compliance met as per the input requirement</li>								
+            <li>FCFF and FCFE of the project over the project timeline</li>												
+            <li>DSCR over the 25 year period</li>												
+            <li> Penalties for non-compliance</li>												
+            <li> Expected EIRR</li>												
+          </ul>
+          </div>  
+          <div> <h3>Input: </h3>                            
+            <ul style={{marginLeft: '20px'}}>
+              <li>Project Configuration: Solar plus Wind, Solar plus Storage, Wind plus Storage, Solar plus Wind Plus Storage										
+              </li><li>15 min or hourly Solar, Wind profile data										
+              </li><li>Capex and Opex of Solar,Wind and BESS </li>
+            </ul>
+          </div>									
       </div>
-   ))}
+      <Button onClick={createNewProject} variant="contained" sx={{ mt: 3, mb: 2,maxHeight: '40px' }} > Create New Project </Button>
+    </div>
+            <div className='project-container'>
+              { projects.length> 0 && projects.map(v =>(
+                  <div className='project-card'> 
+                    <ProjectCard title={v.data.projectName} content={v.data.projectShortDesc} 
+                  id={v._id} projectPreview={showProjectPreview} downloadOutput={downloadOutput}
+                  />
+                  </div>
+              ))}
     </div></>}
     {
       showNewProject && <CreateNewProject/>

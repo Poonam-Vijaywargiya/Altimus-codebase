@@ -9,7 +9,7 @@ import RK from '../../assets/RK.svg';
 const featuresData = [{
     "title": "Optimized Sizing",
     "img" : OS,
-    "content": "Altimus.AI ensures the precise sizing of Solar, Wind, and BESS components to meet Load Profile and Off-take requirements effectively."
+    "content": "Altimus.Energy ensures the precise sizing of Solar, Wind, and BESS components to meet Load Profile and Off-take requirements effectively."
 },{
     "title":"Financial Return Profiling",
     "img" : FR,
@@ -33,7 +33,7 @@ const featuresData = [{
 },{
     "title":"Smart Battery Augmentation Strategy",
     "img" : BA,
-    "content":"Altimus.AI optimizes battery augmentation schedules based on price curve forecasts and degradation profiles, maximizing your returns."
+    "content":"Altimus.Energy optimizes battery augmentation schedules based on price curve forecasts and degradation profiles, maximizing your returns."
 }]
 
 export default featuresData;

@@ -61,7 +61,7 @@ function App() {
     formData:[
       {
       step: 1,
-      stepLabel: 'General Component',
+      stepLabel: 'General Components',
       data: {
         'Contracted Capacity (MW)':'',
         'Evacuation Capacity (MW)' : ''
@@ -82,26 +82,25 @@ function App() {
       }
     },{
       step: 4,
-      stepLabel: 'Transmission Infrastructure',
+      stepLabel: 'Transmission Infra',
       data: {
-        'Transmission line ($/wp)' : ''
+        'Transmission Line Length (kms)': '',
+        'Transmission Line Cost ($ thousands/km)' : ''
       }
     },{
       step: 5,
-      stepLabel: 'Plant/Grid Transmission Specification',
+      stepLabel: 'Grid Specs.',
       data: {
         'Tx. Losses (%)' :'',
         'Project Up Time (%)' :'',
-       'Grid Availability (%)':'',
-       'Evacuation Capacity (MW)': ''
+       'Grid Availability (%)':''
       }
     },{
       step: 6,
-      stepLabel: 'Battery Specification',
+      stepLabel: 'Battery Specs.',
       data: {
       'BESS Round_Trip Efficiency (%)': '',
-      'Battery Rated Power (MW)': '',
-      'Battery Price ($/kWh)':'',
+      'Battery Price ($/kWh)-(inclusive of PCS price and AC BoS)':'',
       'Total Number of cycles': '',
       'Battery Chemistry' : '',
       'BESS Forecasted Price' : ''
@@ -109,7 +108,7 @@ function App() {
     },
   {
     step: '7',
-    stepLabel: 'Financial Parameters',
+    stepLabel: 'Financial Params',
     data:{
       "Debt (%)": "",
       "Repayment Period (Years)": "",
@@ -117,7 +116,7 @@ function App() {
     }
   }, {
     step: '8',
-    stepLabel: 'Contractual Requirement',
+    stepLabel: 'Contractual Req.',
     data:{
       "Project Capacity (MW)": "",
       "Contract Tenure (Years)": "",

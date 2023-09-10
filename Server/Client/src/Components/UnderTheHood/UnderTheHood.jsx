@@ -12,12 +12,12 @@ const UnderTheHood = () => {
          <img src={underthehood} className='video-under-hood-tag' />
            <div className='hood-cards-container'> {underTheHoodData.map(v => (
                 <div className='hood-card'>
-                    <Typography gutterBottom variant="h5" component="div" style={{padding: '20px', display: 'flex', justifyContent:'center'}}>
+                    <Typography variant="h5" component="div" style={{padding: '10px', display: 'flex', justifyContent:'center'}}>
                       {v.title}
                     </Typography>
-                    <div style={{padding: '20px', display: 'flex', justifyContent:'center', alignItems: 'center' }}>
+                    <div style={{padding: '10px', display: 'flex', justifyContent:'center', alignItems: 'center' }}>
                       <img src={v.img} style={{width: '80px', height: '80px'}} />
-                    <Typography sx={{ mb: 1.5 }} style={{padding: '20px' }}>
+                    <Typography sx={{ mb: 1.5 }} style={{padding: '10px' }}>
                       {v.content}
                     </Typography></div>
                   </div>))}

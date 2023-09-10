@@ -20,15 +20,10 @@ const Contact = () => {
       <Grid >
         <Grid item xs={12} sm={6}>
           <div className="contact-info">
-            <PhoneIcon className="contact-icon" color="primary" />
-            <Typography variant="body1">
-              <strong>Phone:</strong> +1 (123) 456-7890
-            </Typography>
-          </div>
-          <div className="contact-info">
             <EmailIcon className="contact-icon" color="primary" />
             <Typography variant="body1">
-              <strong>Email:</strong> admin@altimus.in
+              <strong>Email:</strong> 
+              <a href="mailto:altimus.grg@gmail.com&subject=Contact Enquiry" style={{textDecoration: 'none'}}> altimus.grg@gmail.com</a>
             </Typography>
           </div>
         </Grid>

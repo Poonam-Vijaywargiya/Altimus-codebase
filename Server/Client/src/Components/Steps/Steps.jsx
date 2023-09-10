@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -8,33 +8,47 @@ import {Typography, TextField} from '@mui/material';
 import UserContext from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 import {BatterySpec, GeneralComponent, PlantGridTrans, WindPlant, SolarPlant, TransInfra,
   InitialForm, PreviewProject, ContractualRequirement, FinancialParams} from '..';
 import { Preview } from '@mui/icons-material';
 const Steps = () => {
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+  const handleClose = () => {
+    setOpen(false);
+    navigate("/");
+  };
 const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, projectFile, forcastFile} = useContext(UserContext);
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
-  const [steps, setSteps]  = React.useState(['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications', 'Financial Parameters', 'Contractual Requirement'])
+  const [steps, setSteps]  = React.useState(['General Details','General Components', 'Transmission Infra.','Grid Specs.', 'Financial Params', 'Contractual Req.'])
   useEffect(() =>{
     let stepsCopy = [];
     if(selectedPlantList.indexOf('wind') >-1 && selectedPlantList.indexOf('solar') >-1 && selectedPlantList.indexOf('battery') == -1) {
-      stepsCopy = ['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications','Financial Parameters', 'Contractual Requirement', 'Solar Plant', 'Wind Plant'];
+      stepsCopy = ['General Details','General Components', 'Transmission Infra.','Grid Specs.','Financial Params', 'Contractual Req.', 'Solar Plant', 'Wind Plant'];
     }
     if(selectedPlantList.indexOf('solar') >-1 && selectedPlantList.indexOf('battery') >-1 && selectedPlantList.indexOf('wind') == -1) {
-      stepsCopy = ['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications','Financial Parameters', 'Contractual Requirement', 'Solar Plant', 'Battery Specifications'];
+      stepsCopy = ['General Details','General Components', 'Transmission Infra.','Grid Specs.','Financial Params', 'Contractual Req.', 'Solar Plant', 'Battery Specs.'];
     } 
     if(selectedPlantList.indexOf('wind') >-1 && selectedPlantList.indexOf('battery') >-1 && selectedPlantList.indexOf('solar') == -1 ) {
-      stepsCopy = ['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications','Financial Parameters', 'Contractual Requirement', 'Wind Plant', 'Battery Specifications'];
+      stepsCopy = ['General Details','General Components', 'Transmission Infra.','Grid Specs.','Financial Params', 'Contractual Req.', 'Wind Plant', 'Battery Specs.'];
     }
     if(selectedPlantList.indexOf('wind') >-1 && selectedPlantList.indexOf('battery') >-1 && selectedPlantList.indexOf('solar') > -1 ) {
-      stepsCopy = ['General details','General Componets', 'Transmission Infrastructure','Plant / Grid / Transmission specifications', 'Financial Parameters', 'Contractual Requirement','Solar Plant', 'Wind Plant', 'Battery Specifications'];
+      stepsCopy = ['General Details','General Components', 'Transmission Infra.','Grid Specs.', 'Financial Params', 'Contractual Req.','Solar Plant', 'Wind Plant', 'Battery Specs.'];
     }
     setSteps(stepsCopy)
   },[selectedPlantList])
   const isStepOptional = (step) => {
-    return step === 1;
+    // return step === 1;
   };
 
   const isStepSkipped = (step) => {
@@ -119,7 +133,8 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
     }
     }
     if(resData.status == 'ok') {
-      navigate("/");
+      // navigate("/");
+      setOpen(true);
     }
   }
 
@@ -152,9 +167,9 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
           </Typography>
          { activeStep != 0 && <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Box sx={{ flex: '1 1 auto' }} />
-            <Button onClick={handleBack}>Back</Button>
-            <Button onClick={handleSubmit}>Submit</Button>
-            <Button onClick={handleReset}>Reset</Button>
+            <Button style={{fontSize: '18px'}} onClick={handleBack}>Back</Button>
+            <Button style={{fontSize: '18px'}} onClick={handleSubmit}>Submit</Button>
+            <Button style={{fontSize: '18px'}} onClick={handleReset}>Reset</Button>
           </Box> }
         </React.Fragment>
       ) : (
@@ -167,50 +182,63 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
             { activeStep == 4 && <FinancialParams/>} 
             { activeStep == 5 && <ContractualRequirement/>} 
           
-            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Solar Plant') > -1  &&  steps.indexOf('Battery Specifications') == -1
+            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Solar Plant') > -1  &&  steps.indexOf('Battery Specs.') == -1
             &&  activeStep == 6  && <> <SolarPlant/></>
             }
-            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Solar Plant') > -1 &&  steps.indexOf('Battery Specifications') == -1
+            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Solar Plant') > -1 &&  steps.indexOf('Battery Specs.') == -1
             &&  activeStep == 7 && <> <WindPlant/></>
             }
 
-            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Battery Specifications') > -1 &&  steps.indexOf('Solar Plant') == -1
+            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Battery Specs.') > -1 &&  steps.indexOf('Solar Plant') == -1
             &&  activeStep == 6 &&  <><WindPlant/> </>
             }
-            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Battery Specifications') > -1 &&  steps.indexOf('Solar Plant') == -1
+            {steps.indexOf('Wind Plant') > -1 && steps.indexOf('Battery Specs.') > -1 &&  steps.indexOf('Solar Plant') == -1
             &&  activeStep == 7 && <> <BatterySpec/> </>
             }
 
-            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specifications') > -1 && steps.indexOf('Wind Plant') == -1
+            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specs.') > -1 && steps.indexOf('Wind Plant') == -1
             &&  activeStep == 6 && <> <SolarPlant/></>
             }
-            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specifications') > -1 && steps.indexOf('Wind Plant') == -1
+            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specs.') > -1 && steps.indexOf('Wind Plant') == -1
             &&  activeStep == 7 && <> <BatterySpec/></>
             }
-            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specifications') > -1 && steps.indexOf('Wind Plant') > -1
+            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specs.') > -1 && steps.indexOf('Wind Plant') > -1
             &&  activeStep == 6 && <>  <SolarPlant/></>
             }
-            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specifications') > -1 && steps.indexOf('Wind Plant') > -1
+            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specs.') > -1 && steps.indexOf('Wind Plant') > -1
             &&  activeStep == 7 &&  <>  <WindPlant/></>
             }
-            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specifications') > -1 && steps.indexOf('Wind Plant') > -1
+            {steps.indexOf('Solar Plant') > -1 && steps.indexOf('Battery Specs.') > -1 && steps.indexOf('Wind Plant') > -1
             &&  activeStep == 8 && <>  <BatterySpec/></>
             }
             
           </Box>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2, justifyContent: 'space-around'}}>
-            <Button color="inherit" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }} >
+            <Button style={{fontSize: '18px'}} color="inherit" disabled={activeStep === 0} onClick={handleBack} sx={{ mr: 1 }} >
               Back
             </Button>
-            <Button onClick={handleNext}>
+            <Button style={{fontSize: '18px'}} onClick={handleNext}>
               {activeStep === steps.length - 1 ? 'Preview' : 'Next'}
             </Button>
-            {activeStep === steps.length - 1 &&   <Button onClick={handleSubmit}> 
+            {activeStep === steps.length - 1 &&   <Button style={{fontSize: '18px'}} onClick={handleSubmit}> 
               Submit 
             </Button>  }
           </Box>
         </React.Fragment>
       )}
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Thanks for submitting the requirements.</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+          We shall be sending you an email with a link to the results of the optimization in the next 24- 48 hours.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 }

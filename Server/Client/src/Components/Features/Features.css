@@ -6,9 +6,13 @@
     width: 100%;
     justify-content: space-around;
 }
-
+.feature-tag{
+    margin: 0px 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
 .features-card{
-    margin: 20px;
+    margin: 10px 20px;
 }
 .features-card-container{
     display: flex;
@@ -20,3 +24,13 @@
         flex-direction: column;
     }
   }
+
+.footer-tag {
+    margin: 5px 20px;
+    border: 1px solid rgb(202, 196, 196);
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}

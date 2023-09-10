@@ -38,8 +38,8 @@ function Header(props) {
   };
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if(token) {
+    // const token = localStorage.getItem('token');
+    if(localStorage.getItem('email')) {
       setShowLogin(false);
         if(localStorage.getItem('email') == 'altimus.grg@gmail.com') {
         navItems = ['Home', 'Projects', 'Files', 'About', 'Contact', 'Logout'];
@@ -54,7 +54,7 @@ function Header(props) {
   } 
   const container = window !== undefined ? () => window().document.body : undefined;
   const logout = () =>{
-    localStorage.removeItem('token')
+    // localStorage.removeItem('token')
     localStorage.removeItem('email')
     navigate("/login")
   }
@@ -106,7 +106,7 @@ function Header(props) {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             Altimus <Button style={{ color: '#fff', border: '1px solid white', margin: '5px'}}>
-            <a className='a-links' href='/projects'>Try Now?</a>
+            <a className='a-links' href='/projects'>Try Now</a>
 
             </Button>
           </Typography>

@@ -3,16 +3,16 @@ import './Charts.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import {FreeCashFlow,MonthlyGeneration } from '../index';
+import {FreeCashFlow,MonthlyGeneration, Usability, BESSPrice } from '../index';
 import ChargingStationOutlinedIcon from '@mui/icons-material/ChargingStationOutlined';
 import SolarPowerOutlinedIcon from '@mui/icons-material/SolarPowerOutlined';
 import WindPowerOutlinedIcon from '@mui/icons-material/WindPowerOutlined';
 const Charts = () => {
   return (
     <div className='chart-container'>
-        <Typography align="center" gutterBottom variant="h4" component="div">
-        Optimized Solution
-      </Typography>
+        <div className='optimise-tag'>
+            Optimized Solution
+        </div>
         <div className='kpi-container'>
         <Card sx={{ width: 150 }}>
             <CardContent>
@@ -56,6 +56,8 @@ const Charts = () => {
         </div>
         <FreeCashFlow/>
     <MonthlyGeneration/>
+    <Usability/>
+    <BESSPrice/>
     </div>
   )
 }

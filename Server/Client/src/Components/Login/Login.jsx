@@ -48,7 +48,7 @@ const  Login = () => {
     const resData = await res.json();
     if(resData.user) {
       setUser(resData.user);
-      localStorage.setItem('token', resData.user.token)
+      // localStorage.setItem('token', resData.user.token)
       localStorage.setItem('email', resData.user.email)
       navigate("/");
     } else {

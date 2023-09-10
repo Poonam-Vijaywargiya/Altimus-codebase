@@ -10,7 +10,8 @@ const InitialForm = () => {
   };
     
   return (
-    <div className='individual-step'>
+    <> 
+      <div className='individual-step' style={{marginTop: '10px'}}>
         <TextField
             margin="dense"
             id="projectName"
@@ -18,36 +19,39 @@ const InitialForm = () => {
             name="projectName"
             value={userData.projectName}
             onChange={(e) => setUserData((prev) => ({...userData, 'projectName': e.target.value}))}
-        />
-        <TextField 
-            multiline
-            placeholder="Please Enter Project Short Description"
-            rows={1}
-            maxRows={2} 
-            value={userData.projectShortDesc}
-            label="Project Short Description"
-            onChange={(e) => setUserData((prev) => ({...userData, 'projectShortDesc': e.target.value}))}
-        />
-        <TextField 
-            multiline
-            placeholder="Please Explain Project Details"
-            rows={8}
-            label="Project Description"
-            value={userData.projectDesc}
-            maxRows={16} 
-            onChange={(e) => setUserData((prev) => ({...userData, 'projectDesc': e.target.value}))}
-        />
-        <TextField
-            type="file"
-            margin="dense"
-            id="file"
-            inputProps={{accept:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"}}
-            name="excelFile"
+      /></div> 
+      <div className='individual-step' style={{marginTop: '5px'}}>
+      <TextField 
+          multiline
+          placeholder="Please Enter Project Short Description"
+          rows={1}
+          maxRows={2} 
+          value={userData.projectShortDesc}
+          label="Project Short Description"
+          onChange={(e) => setUserData((prev) => ({...userData, 'projectShortDesc': e.target.value}))}
+      /></div> 
+      <div className='individual-step' style={{marginTop: '10px'}}>
+      <TextField 
+          multiline
+          placeholder="Please Explain Project Details"
+          rows={8}
+          label="Project Description"
+          value={userData.projectDesc}
+          maxRows={16} 
+          onChange={(e) => setUserData((prev) => ({...userData, 'projectDesc': e.target.value}))}
+      /></div> 
+      <div className='individual-step'>
+      <TextField
+          type="file"
+          margin="dense"
+          id="file"
+          inputProps={{accept:"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"}}
+          name="excelFile"
 
-            onChange={(e) => handleFileUpload(e)}
-        />
-        {userData.file && <p>Uploaded File Name: {userData.file}</p>}
-    </div>
+          onChange={(e) => handleFileUpload(e)}
+      /> </div>
+      {userData.file && <p>Uploaded File Name: {userData.file}</p>}
+    </>
   )
 }
 

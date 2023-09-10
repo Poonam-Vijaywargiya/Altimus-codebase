@@ -7,16 +7,12 @@ const Cards = ({title, content, img}) => {
   return (
     <Card>
     <CardContent className="changeColor">
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography  variant="h5" component="div">
       {title}
       </Typography>
-      {/* <img src={img} style={{width: '80px', height: '80px'}} />
-      <Typography sx={{ mb: 1.5 }}>
-     {content}
-     </Typography> */}
-     <div style={{padding: '20px', display: 'flex', alignItems: 'center' }}>
+     <div style={{padding: '10px', display: 'flex', alignItems: 'center' }}>
         <img src={img} style={{width: '60px', height: '60px'}} />
-        <Typography sx={{ mb: 1.5 }} style={{padding: '20px' }}>
+        <Typography sx={{ mb: 1.5 }} style={{padding: '10px' }}>
           {content}
         </Typography>
     </div>
