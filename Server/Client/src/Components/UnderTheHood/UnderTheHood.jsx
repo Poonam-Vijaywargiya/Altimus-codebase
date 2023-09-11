@@ -8,8 +8,9 @@ const UnderTheHood = () => {
   return (
     <>
         <Header/>
+        <div className='under-the-hood-tag'>Under The Hood</div>
         <div className='hood-container'>
-         <img src={underthehood} className='video-under-hood-tag' />
+         <div className='img-under-hood-cotainer '><img src={underthehood} className='img-under-hood-tag' /></div>
            <div className='hood-cards-container'> {underTheHoodData.map(v => (
                 <div className='hood-card'>
                     <Typography variant="h5" component="div" style={{padding: '10px', display: 'flex', justifyContent:'center'}}>

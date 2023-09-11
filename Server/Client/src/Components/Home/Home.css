@@ -15,8 +15,9 @@
     align-items: center;
     flex-direction: column;
     margin: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-family: serif;
+    color: #05498f;
 }
 
 @media only screen and (max-width: 600px) {

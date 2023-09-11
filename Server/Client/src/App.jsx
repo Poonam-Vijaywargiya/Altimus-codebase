@@ -70,8 +70,8 @@ function App() {
       step: 2,
       stepLabel: 'Solar Plant',
       data: {
-      'Solar Module ($/wp)':'',
-      'Solar Balance ($/wp)': '',
+      'Solar Module ($/Wp)':'',
+      'Solar Balance ($/Wp)': '',
       'DC overloading (%)':'',
       }
     },{

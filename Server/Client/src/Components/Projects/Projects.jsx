@@ -136,11 +136,11 @@ const Projects = () => {
     <Header/>
    <div style={{top: '10vh', position: 'relative'}} >
    { !showNewProject && <><div className='btn-class'>
-      <div style={{border: '1px solid lightgray', borderRadius: '10px', padding: '20px'}} >
-        <h2>How does the model work?</h2>									
-        <div>The model aims to provide the project developer with optimized capacity of Solar, Wind and BESS sizing for the given input data</div>									
-        <div > <h3>Output: </h3>                        
-          <ul style={{marginLeft: '20px'}}>
+      <div style={{ padding: '20px'}} >
+        <div className='project-tag'>How does the model work?</div>									
+        <div style={{marginTop: '10px'}}>The model aims to provide the project developer with optimized capacity of Solar, Wind and BESS sizing for the given input data</div>									
+        <div style={{marginTop: '10px'}}> <h3>Output: </h3>                        
+          <ul style={{marginLeft: '20px', marginTop: '10px'}}>
             <li> Solar, Wind and BESS initial installed capacity. Optimized Battery augmentation approach (capacity and year)</li>
             <li> Suggested BESS co-location option ( with Wind or Solar)</li>								
             <li>Compliance met as per the input requirement</li>								
@@ -150,8 +150,8 @@ const Projects = () => {
             <li> Expected EIRR</li>												
           </ul>
           </div>  
-          <div> <h3>Input: </h3>                            
-            <ul style={{marginLeft: '20px'}}>
+          <div style={{marginTop: '10px'}}> <h3>Input: </h3>                            
+            <ul style={{marginLeft: '20px', marginTop: '10px'}}>
               <li>Project Configuration: Solar plus Wind, Solar plus Storage, Wind plus Storage, Solar plus Wind Plus Storage										
               </li><li>15 min or hourly Solar, Wind profile data										
               </li><li>Capex and Opex of Solar,Wind and BESS </li>

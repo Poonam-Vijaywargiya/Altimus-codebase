@@ -1,55 +1,55 @@
 const usabilityData =
 [
     {
-        "year": "Jan",
+        "year": "Year 1",
         "usable_capacity": "313"
     },
     {
-        "year": "Feb",
+        "year": "Year 2",
         "usable_capacity": "300"
     },
     {
-        "year": "Mar",
+        "year": "Year 3",
         "usable_capacity": "334"
     },
     {
-        "year": "Apr",
+        "year": "Year 4",
         "usable_capacity": "322"
     },
     {
-        "year": "May",
+        "year": "Year 5",
         "usable_capacity": "312"
     },
     {
-        "year": "June",
+        "year": "Year 6",
         "usable_capacity": "330"
     },
     {
-        "year": "Jul",
+        "year": "Year 7",
         "usable_capacity": "319"
     },
     {
-        "year": "Aug",
+        "year": "Year 8",
         "usable_capacity": "309"
     },
     {
-        "year": "Sep",
+        "year": "Year 9",
         "usable_capacity": "319"
     },
     {
-        "year": "Oct",
+        "year": "Year 10",
         "usable_capacity": "308"
     },
     {
-        "year": "Nov",
+        "year": "Year 11",
         "usable_capacity": "330"
     },
     {
-        "year": "Dec",
+        "year": "Year 12",
         "usable_capacity": "319"
     },
     {
-        "year": "Dec",
+        "year": "Year 13",
         "usable_capacity": "320"
     },
     {

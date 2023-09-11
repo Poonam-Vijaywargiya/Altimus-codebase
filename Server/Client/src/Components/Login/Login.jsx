@@ -50,7 +50,7 @@ const  Login = () => {
       setUser(resData.user);
       // localStorage.setItem('token', resData.user.token)
       localStorage.setItem('email', resData.user.email)
-      navigate("/");
+      navigate("/projects");
     } else {
       alert('user information added is not correct!')
     }
