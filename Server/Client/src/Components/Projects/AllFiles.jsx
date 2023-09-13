@@ -77,12 +77,14 @@ try {
             flex: 1,
             disableClickEventBubbling: true,
             renderCell: (params) => {
+              if(params.row.name) {
                 return (
                     <div style={{ cursor: "pointer" }}>
                         <FileDownloadIcon index={params.row._id} color="primary" onClick ={() => downloadFile(params.row._id, params.row.data, params.row.name)} />
                      </div>
                 );
              }
+            }
           },
           {
             field: "action",

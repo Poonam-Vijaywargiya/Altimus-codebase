@@ -1,5 +1,5 @@
 .about-content{
-    margin-top: 10vh;
+
     padding: 20px;
 }
 .about-text {
@@ -8,4 +8,16 @@
 .about-tag{
     font-size: 28px;
     font-weight: bold;
+}
+
+.about-container{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10vh;
+}
+
+.about-main {
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    height: 100vh;
 }

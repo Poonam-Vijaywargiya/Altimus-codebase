@@ -9,7 +9,9 @@ const Home = () => {
     <div>
         <video className='videoTag' autoPlay loop muted>
           <source src={energyVideo} type='video/mp4' />
+        
         </video>
+        {/* <img src={energyVideo} alt="Computer man" className='videoTag'></img> */}
        <div className='content'>
           <div>
           ALTIMUS serves as a sophisticated tool for the optimization and configuration of power plants, whether solar, wind, battery, or a hybrid of these. 

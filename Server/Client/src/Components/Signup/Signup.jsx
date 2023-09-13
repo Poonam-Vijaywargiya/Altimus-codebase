@@ -19,7 +19,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Altimus.energy
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -41,17 +41,17 @@ const Signup =  () => {
         },
         method: 'POST',
         body: JSON.stringify({
-            email: data.get('email'),
+            email: data.get('email').toLowerCase(),
             password: data.get('password'),
             firstName: data.get('firstName'),
             lastName: data.get('lastName')
           })
     });
     const resData = await res.json();
-    if(resData.status = 'ok') {
+    if(resData.status == 'ok') {
         navigate("/login");
     } else {
-        alert(resData.error)
+      alert(resData.error)
     }
   };
 

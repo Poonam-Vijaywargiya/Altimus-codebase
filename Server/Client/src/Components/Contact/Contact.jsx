@@ -3,11 +3,13 @@ import {Header } from '../index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import EmailIcon from '@mui/icons-material/Email';
+import contactus from '../../assets/contactus.jpg'
 import './Contact.css';
 const Contact = () => {
   return (
     <div className='contact-container'>
     <Header/>
+    <div style={{display:'flex', alignItems: 'center'}}>
     <div className='contact-card'>
       <Typography variant="h4" gutterBottom>
         Contact Us
@@ -21,12 +23,17 @@ const Contact = () => {
             <EmailIcon className="contact-icon" color="primary" />
             <Typography variant="body1">
               <strong>Email:</strong> 
-              <a href="mailto:admin@altimus.energy&subject=Contact Enquiry" style={{textDecoration: 'none'}}> admin@altimus.energy</a>
+              <a href="mailto:admin@altimus.energy" style={{textDecoration: 'none'}}> admin@altimus.energy</a>
             </Typography>
           </div>
         </Grid>
       </Grid>
     </div>
+    <div style={{flex: 2  }}>
+      <img src={contactus} style={{height: '50%', width: '90%'}}/>
+    </div>
+    </div>
+   
  
     </div>
   )

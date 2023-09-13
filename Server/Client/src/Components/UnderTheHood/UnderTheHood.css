@@ -42,7 +42,7 @@
 .under-the-hood-tag {
     font-size: 28px;
     font-weight: bold;
-    margin: 10vh 0px 0px 20px;
+    margin: 10vh 0px 20px 20px;
 }
 @media only screen and (max-width: 900px) {
     .img-under-hood-tag{

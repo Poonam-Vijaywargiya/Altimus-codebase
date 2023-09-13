@@ -7,7 +7,6 @@ import Battery from '../../assets/Battery.svg';
 import Generation from '../../assets/Generation.svg';
 import BatteryPlant from '../../assets/Battery-Plant.svg';
 import SolarPlant from '../../assets/Solar-Plant.svg';
-import energyVideo from '../../assets/optimize.mp4';
 const Optimize = () => {
 const [countG, setCountG] = useState(1999550);
 const [countC, setCountC] = useState(1499550);
@@ -52,8 +51,8 @@ useEffect(() => {
         <div className='icons-style'>
           <img src={Generation} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1% increase in generation creates value  $
-          {countG == 2000000 ? <span style={{fontWeight: 'bold', color: '#05498f',fontSize: '28px'}}>{countG}</span> : <span>{countG}</span>}
+          1% increase in generation creates value 
+          {countG == 2000000 ? <span style={{fontWeight: 'bold', color: '#05498f',fontSize: '28px'}}> USD 2,000,000</span> : <span> USD {countG}</span>}
           {/* <CountUp end={2000000} duration={8} useEasing={true} start={0} /> */}
           </div>
         </div>
@@ -61,8 +60,8 @@ useEffect(() => {
         <div className='icons-style'>
           <img src={OCapex} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1% lower capex creates value $
-          {countC == 1500000 ? <span style={{fontWeight: 'bold', color: '#05498f',fontSize: '28px'}}>{countC}</span> : <span>{countC}</span>}
+          1% lower capex creates value 
+          {countC == 1500000 ? <span style={{fontWeight: 'bold', color: '#05498f',fontSize: '28px'}}> USD 1,500,000</span> : <span> USD {countC}</span>}
           {/* <CountUp end={1500000} duration={8} useEasing={true} start={0}/>  */}
           </div>
         </div>
@@ -70,8 +69,8 @@ useEffect(() => {
         <div className='icons-style'>
           <img src={Battery} className='opt-icons' />
           <div style={{padding: '20px'}}>
-          1-year extended battery life creates value $
-          {countB == 500000 ? <span style={{fontWeight: 'bold', color: '#05498f', fontSize: '28px'}}>{countB}</span> : <span>{countB}</span>}
+          1-year extended battery life creates value 
+          {countB == 500000 ? <span style={{fontWeight: 'bold', color: '#05498f', fontSize: '28px'}}> USD 50,000</span> : <span> USD {countB}</span>}
           {/* <CountUp end={500000} duration={8} useEasing={true} start={0} /> */}
           </div>
         </div>

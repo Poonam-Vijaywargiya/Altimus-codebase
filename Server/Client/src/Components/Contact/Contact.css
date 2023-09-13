@@ -4,9 +4,9 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url(../../assets/contact.jpg) ;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background: url(../../assets/contactus.jpg) ; */
+    /* background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 .contact-info {
@@ -20,12 +20,17 @@
   }
   
   .contact-card {
-    padding: 2%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    flex: 1;
+    padding: 1%;
+    border: 1px solid rgba(33, 80, 209, 0.1);
     border-radius: 10px;
-    height: 25%;
-    margin-left: 15vw;
-    margin-top: 20vh;
+    /*  height: 25%; */
+    margin-left: 5vw;
+    /* margin-top: 20vh; */
     background-color: white;
-    box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px  rgba(183, 181, 181, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

@@ -7,7 +7,7 @@ import './Charts.css';
   return (
     <div className='chart-style'>
       <Typography align="center" gutterBottom variant="h6" component="div" gutterTop>
-       Battery Usability Capacity(MWh)
+       Battery Usable Capacity(MWh)
       </Typography>
       <ResponsiveContainer width='90%' height={250} >
          <LineChart data={usabilityData} >

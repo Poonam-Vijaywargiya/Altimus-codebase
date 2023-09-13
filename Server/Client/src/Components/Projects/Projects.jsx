@@ -115,8 +115,7 @@ const Projects = () => {
     const response = await axios.get(`/api/downloadOutput/${id}`, {
       responseType: 'blob',
     });
-    if(response.status == 200) {
-      
+    // if(response.status == 200) {
       const blob = new Blob([response.data], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       const a = document.createElement('a');
@@ -125,11 +124,11 @@ const Projects = () => {
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
-    } else if(response.status == 404) {
-      alert('Output is getting generated, please wait!')
-    } else {
-      alert('Some error ocurred, we will be back soon.')
-    }
+    // } else if(response.status == 404) {
+    //   alert('Output is getting generated, please wait!')
+    // } else {
+    //   alert('Some error ocurred, we will be back soon.')
+    // }
   } 
   return (
     <div>

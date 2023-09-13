@@ -19,7 +19,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        Altimus.energy
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -41,7 +41,7 @@ const  Login = () => {
         },
         method: 'POST',
         body: JSON.stringify({
-            email: data.get('email'),
+            email: data.get('email').toLowerCase(),
             password: data.get('password')
           })
     });
@@ -94,10 +94,10 @@ const  Login = () => {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
             <Button
               type="submit"
               fullWidth
@@ -108,9 +108,9 @@ const  Login = () => {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                {/* <Link href="#" variant="body2">
                   Forgot password?
-                </Link>
+                </Link> */}
               </Grid>
               <Grid item>
                 <Link href="/signup" variant="body2">

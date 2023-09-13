@@ -8,7 +8,7 @@ import './Charts.css';
   return (
     <div className='chart-style'>
       <Typography align="center" gutterBottom variant="h6" component="div" gutterTop>
-       BESS Forcast Price (Battery and PCS Only)
+       BESS Forecast Price (Battery and PCS Only)
       </Typography>
       <ResponsiveContainer width='90%' height={250} >
          <LineChart data={bessPriceData} >

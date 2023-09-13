@@ -102,9 +102,11 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
     const resData = await res.json();
     const projectid = resData.projectid;
     const projectname = resData.name;
-    if(resData.status == 'ok' && projectFile) {
+    if(resData.status == 'ok' ) {
       const formData = new FormData();
-      formData.append('excelFile', projectFile);
+      if(projectFile) {
+        formData.append('excelFile', projectFile);
+      }
       formData.append('email', localStorage.getItem('email'));
       formData.append('type', 'project-file');
       formData.append('projectid', projectid);

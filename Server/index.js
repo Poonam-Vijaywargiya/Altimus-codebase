@@ -44,17 +44,17 @@ const transporter = nodemailer.createTransport({
   });
 app.get('*', function(req, res) {
     // console.log(__dirname , ,'dirname');
-    fs.readdir(__dirname+'/Client', function (err, files) {
-        //handling error
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        } 
-        //listing all files using forEach
-        files.forEach(function (file) {
-            // Do whatever you want to do with the file
-            console.log(file); 
-        });
-    });
+    // fs.readdir(__dirname+'/Client', function (err, files) {
+    //     //handling error
+    //     if (err) {
+    //         return console.log('Unable to scan directory: ' + err);
+    //     } 
+    //     //listing all files using forEach
+    //     files.forEach(function (file) {
+    //         // Do whatever you want to do with the file
+    //         console.log(file); 
+    //     });
+    // });
     res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
       if (err) {
         res.status(500).send(err);
@@ -83,7 +83,11 @@ app.get('*', function(req, res) {
 
 app.post('/api/signup', async (req,res) =>{
     try{
-        const newPwd = await bcrypt.hash(req.body.password, 10)
+        const user  = await User.findOne({email: req.body.email});
+        if(user) {
+            res.json({status: 'error', error: 'User already exists, please sign in instead.'}) 
+        } else {
+        const newPwd = await bcrypt.hash(req.body.password, 10);
         await User.create({
             email: req.body.email,
             password: newPwd,
@@ -91,7 +95,8 @@ app.post('/api/signup', async (req,res) =>{
             lastName: req.body.lastName,
         });
         res.json({status: 'ok'})
-    } catch(err) {
+    } 
+    }catch(err) {
         res.json({status: 'error', error: err})
     }
 })
@@ -165,8 +170,30 @@ app.post('/api/upload', upload.single('excelFile'), async (req, res) => {
     const type = req.body.type;
     const projectid = req.body.projectid;
     const projectname = req.body.projectname;
+    let newFile = '';
     if (!file) {
-        return res.status(400).send('No file uploaded.');
+        // return res.status(400).send('No file uploaded.');
+        newFile = new File({
+            name: '',
+            data: '',
+            email: email,
+            type: type,
+            projectid:projectid,
+            projectname:projectname, 
+            uploadedfile:'',
+            pdfdata: ''
+          });
+    } else {
+        newFile = new File({
+            name: file.originalname,
+            data: file.buffer,
+            email: email,
+            type: type,
+            projectid:projectid,
+            projectname:projectname, 
+            uploadedfile:'',
+            pdfdata: ''
+          });
     }
     
     // // Parse the Excel file and save it to MongoDB
@@ -174,16 +201,16 @@ app.post('/api/upload', upload.single('excelFile'), async (req, res) => {
     // const sheet = workbook.Sheets[workbook.SheetNames[0]];
     // const fileData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
     
-    const newFile = new File({
-      name: file.originalname,
-      data: file.buffer,
-      email: email,
-      type: type,
-      projectid:projectid,
-      projectname:projectname, 
-      uploadedfile:'',
-      pdfdata: ''
-    });
+    // const newFile = new File({
+    //   name: file.originalname,
+    //   data: file.buffer,
+    //   email: email,
+    //   type: type,
+    //   projectid:projectid,
+    //   projectname:projectname, 
+    //   uploadedfile:'',
+    //   pdfdata: ''
+    // });
     try {
         await newFile.save();
         res.status(201).send('File uploaded successfully.');
