@@ -42,7 +42,7 @@ const transporter = nodemailer.createTransport({
       pass: 'altimus123', // Your GoDaddy email password
     },
   });
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
     // console.log(__dirname , ,'dirname');
     fs.readdir(__dirname+'/Client', function (err, files) {
         //handling error
