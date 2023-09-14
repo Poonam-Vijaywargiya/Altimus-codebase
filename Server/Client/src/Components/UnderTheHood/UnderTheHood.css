@@ -28,21 +28,21 @@
     align-items: center;
 }
 .img-under-hood-tag{
-    height: 50vh;
+    height: 60vh;
     top: 0;
     align-items: stretch;
     bottom: 0;
     object-fit: fill;
-    margin: 1%;
-    border: 5px solid white;
+    /* margin: 1%; */
+    /* border: 5px solid white; */
     border-radius: 15px;
-    width: 50%;
+    width: 100%;
 }
 
 .under-the-hood-tag {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
-    margin: 10vh 0px 20px 20px;
+    margin: 10vh 0px 0px 20px;
 }
 @media only screen and (max-width: 900px) {
     .img-under-hood-tag{
@@ -51,9 +51,9 @@
         align-items: stretch;
         bottom: 0;
         object-fit: fill;
-        margin: 1%;
-        border: 5px solid white;
-        border-radius: 15px;
+        /* margin: 1%; */
+        /* border: 5px solid white; */
+        /* border-radius: 15px; */
         width: 100%;
        
     }

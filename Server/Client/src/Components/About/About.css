@@ -18,6 +18,17 @@
 
 .about-main {
     background-color: rgb(247, 247, 247);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
+@media only screen and (max-width: 800px) {
+    .about-container{
+        flex-direction: column;
+    }
+    .about-main{
+        background-color: rgb(247, 247, 247);
+        width: 100vw;
+        height: 100%;
+    }
+  }
+

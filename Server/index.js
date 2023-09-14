@@ -42,25 +42,25 @@ const transporter = nodemailer.createTransport({
       pass: 'altimus123', // Your GoDaddy email password
     },
   });
-app.get('*', function(req, res) {
-    // console.log(__dirname , ,'dirname');
-    // fs.readdir(__dirname+'/Client', function (err, files) {
-    //     //handling error
-    //     if (err) {
-    //         return console.log('Unable to scan directory: ' + err);
-    //     } 
-    //     //listing all files using forEach
-    //     files.forEach(function (file) {
-    //         // Do whatever you want to do with the file
-    //         console.log(file); 
-    //     });
-    // });
-    res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    });
-  });
+// app.get('*', function(req, res) {
+//     // console.log(__dirname , ,'dirname');
+//     fs.readdir(__dirname+'/Client', function (err, files) {
+//         //handling error
+//         if (err) {
+//             return console.log('Unable to scan directory: ' + err);
+//         } 
+//         //listing all files using forEach
+//         files.forEach(function (file) {
+//             // Do whatever you want to do with the file
+//             console.log(file); 
+//         });
+//     });
+//     res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
+//       if (err) {
+//         res.status(500).send(err);
+//       }
+//     });
+//   });
 // app.get('*', function(req, res){
 //     console.log(path.join(__dirname, "../Client/dist/index.html"))
 //    res.sendFile(
@@ -170,7 +170,7 @@ app.post('/api/upload', upload.single('excelFile'), async (req, res) => {
     const type = req.body.type;
     const projectid = req.body.projectid;
     const projectname = req.body.projectname;
-    let newFile = '';
+    let newFile = ' ';
     if (!file) {
         // return res.status(400).send('No file uploaded.');
         newFile = new File({

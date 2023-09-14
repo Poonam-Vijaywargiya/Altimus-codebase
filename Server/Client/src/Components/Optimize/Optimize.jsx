@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react'
 import {Header } from '..';
 import './Optimize.css';
-import CountUp from 'react-countup';
 import OCapex from '../../assets/OCapex.svg';
 import Battery from '../../assets/Battery.svg';
 import Generation from '../../assets/Generation.svg';
-import BatteryPlant from '../../assets/Battery-Plant.svg';
-import SolarPlant from '../../assets/Solar-Plant.svg';
+// import BatteryPlant from '../../assets/Battery-Plant.svg';
+// import SolarPlant from '../../assets/Solar-Plant.svg';
+import optimze from '../../assets/whyoptimize.jpg'
 const Optimize = () => {
 const [countG, setCountG] = useState(1999550);
 const [countC, setCountC] = useState(1499550);
@@ -35,15 +35,15 @@ useEffect(() => {
       <div className='optimize-tag'>Why Optimize?</div>
       <div className='optimize-container'>
        
-        <div className='icon'>
+        {/* <div className='icon'> */}
           <div className='icon-container'>
-            <img src={SolarPlant} className='top-icons' />
-            <img src={BatteryPlant} className='top-icons' />
+            <img src={optimze} className='top-icons' />
+            {/* <img src={BatteryPlant} className='top-icons' /> */}
           </div>
-          <div>
-            100 MWac Solar Plant + 50 MWHr Battery plant = Cost $75 Million
+          <div className='optimize-text'>
+          A hybrid power plant with a solar capacity of 100 MWac and battery capacity of 50 MWh with a Total Project Cost of US$75 million , incremental improvements can have an outsize impact. 
           </div>
-        </div>
+        {/* </div> */}
         {/* <video className='video-optimize-tag' autoPlay muted>
           <source src={energyVideo} type='video/mp4' />
         </video> */}
