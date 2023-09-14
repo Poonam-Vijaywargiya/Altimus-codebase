@@ -42,25 +42,7 @@ const transporter = nodemailer.createTransport({
       pass: 'altimus123', // Your GoDaddy email password
     },
   });
-app.get('/', function(req, res) {
-    // console.log(__dirname , ,'dirname');
-    fs.readdir(__dirname+'/Client', function (err, files) {
-        //handling error
-        if (err) {
-            return console.log('Unable to scan directory: ' + err);
-        } 
-        //listing all files using forEach
-        files.forEach(function (file) {
-            // Do whatever you want to do with the file
-            console.log(file); 
-        });
-    });
-    res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    });
-  });
+
 // app.get('*', function(req, res){
 //     console.log(path.join(__dirname, "../Client/dist/index.html"))
 //    res.sendFile(
@@ -286,7 +268,26 @@ app.get('/api/downloadOutput/:id', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
-
+app.get('*', function(req, res) {
+    // console.log(__dirname , ,'dirname');
+    fs.readdir(__dirname+'/Client', function (err, files) {
+        //handling error
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        } 
+        //listing all files using forEach
+        files.forEach(function (file) {
+            // Do whatever you want to do with the file
+            console.log(file); 
+        });
+    });
+    res.sendFile('./Client/dist/index.html', { root: __dirname }, function(err) {
+      if (err) {
+        res.status(500).send(err);
+      }
+    });
+  });
+  
 const PORT = process.env.PORT || 1337;
 
 app.listen(PORT, ()=>{
