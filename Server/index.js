@@ -198,7 +198,7 @@ app.post('/api/upload', upload.single('excelFile'), async (req, res) => {
 
 app.post('/api/getallfiles', async (req,res) =>{
     try{
-        const filesData = await File.find().select({ name: 1,projectname: 1, email: 1, type: 1,uploadedfile: 1});;
+        const filesData = await File.find().select({ name: 1,projectname: 1, email: 1, type: 1,uploadedfile: 1, projectid: 1});;
         res.json({status: 'ok', data: filesData})
     } catch(err) {
         res.json({status: 'error', error: err})
@@ -287,7 +287,7 @@ app.get('*', function(req, res) {
       }
     });
   });
-  
+
 const PORT = process.env.PORT || 1337;
 
 app.listen(PORT, ()=>{

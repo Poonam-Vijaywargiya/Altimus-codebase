@@ -173,7 +173,7 @@ const Projects = () => {
       showNewProject && <CreateNewProject/>
     }
 
-   { setShowProjectPreviewModal && data && <Dialog
+   { showProjectPreviewModal && data && <Dialog
         open={open}
         TransitionComponent={Transition}
         keepMounted

@@ -7,10 +7,48 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import {Header} from '../index';
 import axios from 'axios';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 const AllFiles = () => {
     const [rows, setRows]  = useState([]);
     const fileInputRef = useRef(null);
-    const [currentRowdata, setCurrentRowData] = useState(null)
+    const [currentRowdata, setCurrentRowData] = useState(null);
+    const [showProjectPreviewModal, setShowProjectPreviewModal] = useState(false);
+    const [data, setData] = useState({});
+    const [open, setOpen] = useState(false);
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+    const showProjectPreview = async (id ) => {
+    
+      const res = await fetch('/api/getprojectById', {
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          method: 'POST',
+          body: JSON.stringify({
+              id: id
+            })
+      });
+      const resData = await res.json();
+      setData(resData.data.data);
+      setOpen(true);
+      setShowProjectPreviewModal(true);
+    }
     const downloadFile = async (id, data, name) => {
 try {
     const response = await axios.get(`/api/download/${id}`, {
@@ -53,22 +91,23 @@ try {
         fileInputRef.current.click();
     }
     const columns = [
-        { field: '_id', headerName: 'ID',flex: 2},
+        // { field: '_id', headerName: 'ID',flex: 1, hide: false},
+        // { field: 'projectid', headerName: 'Project ID',flex: 1, hide: false},
         {
             field: 'projectname',
-            headerName: 'Project Name', flex: 1
+            headerName: 'Project Name', flex: 2
         },
         {
           field: 'name',
-          headerName: 'File Name', flex: 1
+          headerName: 'File Name', flex: 2
         },
         {
           field: 'email',
-          headerName: 'User Email',flex: 1
+          headerName: 'User Email',flex: 2
         },
         {
           field: 'type',
-          headerName: 'File Type', flex: 1
+          headerName: 'File Type', flex: 2
         },
         {
             field: "actions",
@@ -113,9 +152,22 @@ try {
           },
           {
             field: 'uploadedfile',
-            headerName: 'Uploaded File', flex: 1
+            headerName: 'Uploaded File', flex: 2
           },
-  
+          {
+            field: "preview",
+            headerName: "Show Preview",
+            sortable: false,
+            flex: 1,
+            disableClickEventBubbling: true,
+            renderCell: (params) => {
+                return (
+                    <div style={{ cursor: "pointer" }}>
+                        <VisibilityIcon index={params.row._id} color="primary" onClick ={() => showProjectPreview(params.row.projectid)} />
+                     </div>
+                );
+            }
+          },
     ];
     const getAllFiles = async() =>{
     const res = await fetch('/api/getallfiles', {
@@ -134,7 +186,6 @@ try {
     <>
     <Header/>
     <Box sx={{ height: '100%', width: '96vw', mt: '10vh', ml:'2vw', mr:'2vw', mb: '20px', boxSizing:'border-box'}}>
-        <p style={{display:'flex', justifyContent:'center', marginBottom: '10px'}}>All Files: </p>
       <DataGrid
         rows={rows}
         getRowId={(row) => row._id}
@@ -150,7 +201,42 @@ try {
         disableRowSelectionOnClick
         style={{ overflowX: 'scroll' }}
       />
-    </Box></>
+    </Box>
+    { showProjectPreviewModal && data && <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        fullWidth
+        maxWidth="sm"
+        onClose={handleClose}
+      >
+        <DialogTitle>{"Project Preview of Project: "} {data.projectName}</DialogTitle>
+        <DialogContent>
+        <div style={{display:'flex', flexDirection:'column'}}>
+        <div style={{ display:'flex', flexDirection:'column', marginTop: '10px',marginBottom: '10px', borderRadius: '20px', border: '1px solid gray', padding: '15px'}}>
+        <div style={{marginTop: '20px',marginBottom: '20px'}}>Project Details</div>   
+        <TextField variant="standard" value={"Project Name: "+data.projectName} InputProps={{readOnly: true}} />
+        <TextField variant="standard"  value={"Project Short Description: "+data.projectShortDesc} InputProps={{readOnly: true}} />
+        <TextField variant="standard" value={"Project Description: " + data.projectDesc} InputProps={{readOnly: true}} />
+        <TextField variant="standard" value={"Project File: "+data.file} InputProps={{readOnly: true}} />
+          </div>
+          {data && data.formData && data.formData.map(step => (
+           <div style={{ display:'flex', flexDirection:'column', marginTop: '10px',marginBottom: '10px', borderRadius: '20px', border: '1px solid gray', padding: '15px'}}>
+                <div style={{marginTop: '20px',marginBottom: '20px'}}>{step.stepLabel}</div>
+            <>
+            {Object.keys(step.data).map(value =>(
+                <TextField  label={value} variant="standard" value={step.data[value]} InputProps={{ readOnly: true }} />
+            ))}
+            </>
+            </div>
+          ))}
+        </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </Dialog>}
+    </>
   );
 }
 
