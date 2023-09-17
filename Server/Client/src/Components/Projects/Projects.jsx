@@ -18,7 +18,7 @@ const Projects = () => {
   const navigate = useNavigate();
   const [showNewProject, setShowNewProject] = useState(false)
   const [projects, setProjects] = useState([]);
-  const [projectPreviewModal, setShowProjectPreviewModal] = useState(false);
+  const [showProjectPreviewModal, setShowProjectPreviewModal] = useState(false);
   const [data, setData] = useState({});
   const [open, setOpen] = useState(false);
 
