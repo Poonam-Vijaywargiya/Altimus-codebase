@@ -1,6 +1,5 @@
 
 .hood-card{
-    /* margin-bottom: 20px; */
     border: 1px solid rgb(204, 193, 193);
     border-radius: 10px;
     margin: 0 1%;
@@ -10,11 +9,9 @@
 .hood-container{
     display: flex;
     flex-direction: column;
-    /* top: 5vh; */
-    /* position: absolute; */
     width: 100%;
     justify-content: space-around;
-    /* margin: 1% 0%; */
+    margin-top: 30px;
 }
 
 .hood-cards-container{
@@ -33,16 +30,14 @@
     align-items: stretch;
     bottom: 0;
     object-fit: fill;
-    /* margin: 1%; */
-    /* border: 5px solid white; */
     border-radius: 15px;
     width: 100%;
 }
 
 .under-the-hood-tag {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    margin: 10vh 0px 0px 20px;
+    margin: 10px 0px 0px 20px;
 }
 @media only screen and (max-width: 900px) {
     .img-under-hood-tag{
@@ -51,9 +46,6 @@
         align-items: stretch;
         bottom: 0;
         object-fit: fill;
-        /* margin: 1%; */
-        /* border: 5px solid white; */
-        /* border-radius: 15px; */
         width: 100%;
        
     }

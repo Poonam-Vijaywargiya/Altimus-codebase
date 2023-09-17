@@ -16,13 +16,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 
 import {BatterySpec, GeneralComponent, PlantGridTrans, WindPlant, SolarPlant, TransInfra,
   InitialForm, PreviewProject, ContractualRequirement, FinancialParams} from '..';
-import { Preview } from '@mui/icons-material';
 const Steps = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
   const handleClose = () => {
     setOpen(false);
     navigate("/");
@@ -48,7 +44,6 @@ const {userData, setUserData, selectedPlantList, setSelectedPlantList, user, pro
     setSteps(stepsCopy)
   },[selectedPlantList])
   const isStepOptional = (step) => {
-    // return step === 1;
   };
 
   const isStepSkipped = (step) => {

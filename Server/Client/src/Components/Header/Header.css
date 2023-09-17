@@ -4,7 +4,11 @@
     width: 50px;
 }
 
-.nested-links:hover{
+.p-links{
+    color: #fff;
+    text-decoration: none;
+}
+.nested-links:hover, .p-links:hover{
     color: #bfd2e4;
 }
 
@@ -36,4 +40,9 @@
 .drawer-a-links{
     color: black;
     text-decoration: none
+}
+.drawer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

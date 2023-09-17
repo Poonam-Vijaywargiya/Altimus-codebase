@@ -1,15 +1,18 @@
 .features-container{
     display: flex;
     flex-direction: row;
-    top: 10vh;
-    position: absolute;
     width: 100%;
     justify-content: space-around;
-}
-.feature-tag{
+    background: rgb(255,255,255);
+    margin-bottom: 30px;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(210,228,232,1) 49%, rgba(159,201,204,1) 93%, rgba(140,191,192,1) 100%);
+}  
+    .feature-tag{
     margin: 0px 20px;
     font-size: 28px;
     font-weight: bold;
+    color: white
+   
 }
 .features-card{
     margin: 10px 20px;
@@ -34,6 +37,5 @@
     padding: 10px;
     text-align: center;
     font-weight: bold;
-    /* bottom: 0;
-    position: fixed; */
+    background-color: white;
 }

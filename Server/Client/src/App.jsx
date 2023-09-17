@@ -15,14 +15,6 @@ function App() {
       element:  <Home />,
     },
     {
-      path: "/features",
-      element:  <Features />,
-    },
-    {
-      path: "/optimize",
-      element:  <Optimize />,
-    },
-    {
       path: "/about",
       element:  <About />,
     },
@@ -37,10 +29,6 @@ function App() {
     {
       path: "/contact",
       element: <Contact />,
-    },
-    {
-      path: "/underTheHood",
-      element: <UnderTheHood />,
     },
     {
       path: "/signup",

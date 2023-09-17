@@ -33,8 +33,6 @@ const Contact = () => {
       <img src={contactus} style={{height: '50%', width: '90%'}}/>
     </div>
     </div>
-   
- 
     </div>
   )
 }

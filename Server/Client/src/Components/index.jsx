@@ -10,7 +10,6 @@ export {default as Navigation } from './Navigation/Navigation';
 export {default as Login } from './Login/Login';
 export {default as Optimize } from './Optimize/Optimize';
 export {default as Cards } from './Cards/Cards';
-export {default as Forms } from './Forms/Forms';
 export {default as About } from './About/About';
 export {default as Contact } from './Contact/Contact';
 export {default as Home } from './Home/Home';

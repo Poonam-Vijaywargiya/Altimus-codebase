@@ -1,13 +1,10 @@
 import React from 'react'
-import {Header,Charts,Cards } from '..';
+import {Charts,Cards } from '..';
 import './Features.css';
 import featuresData from './FeaturesData.js';
-import Typography from '@mui/material/Typography';
 const Features = () => {
   return (
-    <>
-      <Header/>
-      <div className='features-container'>
+      <div className='features-container' id='featureSection'>
         <div className='features-card-container'>
         <div className='feature-tag'>
         Altimus.Energy – Features and Capabilities
@@ -21,7 +18,6 @@ const Features = () => {
         </div>
         <Charts/>
       </div>
-    </>
   )
 }
 
