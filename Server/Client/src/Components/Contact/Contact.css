@@ -31,3 +31,24 @@
     align-items: center;
     flex-direction: column;
 }
+
+.contact-main-container{
+  display:flex;
+  align-items: center;
+  flex-direction: row;
+}
+.contact-img {
+ height: 50%;
+width: 90%
+}
+@media only screen and (max-width: 600px) {
+  .contact-main-container{
+      flex-direction: column;
+      margin-top: 10vh;
+      gap: 20px;
+  }
+  .contact-img {
+    height: 100%;
+    width: 100%
+   }
+}
