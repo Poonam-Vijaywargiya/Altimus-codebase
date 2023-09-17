@@ -32,3 +32,11 @@
 .textfield{
     margin-bottom: "100px"
 }
+
+@media only screen and (max-width: 600px) {
+    .btn-class{
+        flex-direction: column;
+        gap: 20px;
+    }
+  }
+  
