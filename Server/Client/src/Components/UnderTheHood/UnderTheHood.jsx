@@ -7,8 +7,8 @@ import underthehoodp from '../../assets/underthehoodp.jpg';
 const UnderTheHood = () => {
   return (
     <>
-        {/* <div className='under-the-hood-tag' id="underHoodSection">Under The Hood</div> */}
-        <div className='hood-container'>
+        {/* <div className='under-the-hood-tag' >Under The Hood</div> */}
+        <div className='hood-container' id="underHoodSection">
          <div className='img-under-hood-cotainer '><img src={underthehoodp} className='img-under-hood-tag' /></div>
            <div className='hood-cards-container'> {underTheHoodData.map(v => (
                 <div className='hood-card'>
