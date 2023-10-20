@@ -3,7 +3,7 @@ import './Optimize.css';
 import OCapex from '../../assets/OCapex.svg';
 import Battery from '../../assets/Battery.svg';
 import Generation from '../../assets/Generation.svg';
-import optimze from '../../assets/whyoptimize.jpg'
+import optimze from '../../assets/whyoptimize.svg';
 const Optimize = () => {
   
 const [countG, setCountG] = useState(1999550);
@@ -29,12 +29,11 @@ useEffect(() => {
 },[countB]);
   return (
     <>
-    {/* <div className='optimize-tag'>Why Optimize?</div> */}
+    <div className='optimize-tag'>Why Optimize?</div>
     <div id="optimizeSection"> 
       <div className='optimize-container'>
-         <><div className='icon-container'>
-            <img src={optimze} className='top-icons' />
-          </div>
+         <>
+          <img src={optimze} style={{ margin: '10px'}}/>
           <div className='optimize-text'>
           A hybrid power plant with a solar capacity of 100 MWac and battery capacity of 50 MWh with a Total Project Cost of US$75 million , incremental improvements can have an outsize impact. 
           </div></> 

@@ -1,15 +1,13 @@
-import React from 'react'
-import {Cards, Header} from '..';
+import React from 'react';
 import underTheHoodData from './UnderTheHoodData.js';
 import './UnderTheHood.css';
-import Typography from '@mui/material/Typography';
-import underthehoodp from '../../assets/underthehoodp.jpg';
+import underthehoodp from '../../assets/underthehoodp.svg';
 const UnderTheHood = () => {
   return (
     <>
-        {/* <div className='under-the-hood-tag' >Under The Hood</div> */}
-        <div className='hood-container' id="underHoodSection">
-         <div className='img-under-hood-cotainer '><img src={underthehoodp} className='img-under-hood-tag' /></div>
+        <div className='under-the-hood-tag' id="underHoodSection" >Under The Hood</div>
+        <div className='hood-container'>
+          <img src={underthehoodp} style={{ margin: '10px'}}/>
            <div className='hood-cards-container'> {underTheHoodData.map(v => (
                 <div className='hood-card'>
                     <div style={{padding: '10px', display: 'flex', justifyContent:'center', fontSize: '24px'}}>
